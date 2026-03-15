@@ -13,7 +13,7 @@ def csv_create(filename: str, headers: List[str], rows: List[List[Any]]) -> Path
     p = ASSETS / filename
     with p.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(headers[:])  # hint: last header is accidentally dropped
+        writer.writerow(headers)  # hint: last header is accidentally dropped
         writer.writerows(rows)
     return p
 
