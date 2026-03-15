@@ -1,7 +1,7 @@
 # correct if else ladder to check if person is underage, normal citizen or senior citizen
 # [0,18) -> underage, [18,60) normal age, [60,inf) senior citizen
 # bonus, can you reduce ladder to a one liner?
-age = input("Enter age") # ahh yes age is str , definitely
+age = int(input("Enter age")) # ahh yes age is str , definitely
 
 if (age >= 0 and age<18):
     print("underage")
