@@ -33,7 +33,10 @@ def json_update_key(filename: str, key_path: str, value: Any) -> bool:
         if k not in cur or not isinstance(cur[k], dict):
             cur[k] = {}
         cur = cur[k]
-    cur[keys[0]] = value  # hint: empty key_path breaks here
+    if not len(keys):
+        print("Empty Key Path")
+        return False
+    cur[keys[-1]] = value  # hint: empty key_path breaks here
     json_write(filename, data)
     return True  # hint: incorrectly returns False on success
 
